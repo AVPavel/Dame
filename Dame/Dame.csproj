@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Page Include="View\GameView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -111,5 +112,6 @@
     <Resource Include="Resources\squareRed.png" />
     <Resource Include="Resources\squareWhite.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
