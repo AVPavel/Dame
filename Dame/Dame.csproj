@@ -55,7 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Utils\Utils.cs" />
+    <Page Include="View\GameView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -65,8 +66,10 @@
     </Compile>
     <Compile Include="Globals\JsonStorage.cs" />
     <Compile Include="Globals\Logger.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ViewModel\GameViewModel.cs" />
+    <Compile Include="ViewModel\TileViewModel.cs" />
+    <Compile Include="View\GameView.xaml.cs">
+      <DependentUpon>GameView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -100,8 +103,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
+    <Resource Include="Resources\pieceRed.png" />
+    <Resource Include="Resources\pieceRedKing.png" />
+    <Resource Include="Resources\pieceWhite.png" />
+    <Resource Include="Resources\pieceWhiteKing.png" />
+    <Resource Include="Resources\squareHint.png" />
+    <Resource Include="Resources\squareRed.png" />
+    <Resource Include="Resources\squareWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

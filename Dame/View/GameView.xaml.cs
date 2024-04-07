@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dame
+namespace Dame.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GameView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GameView : Window
     {
-        public MainWindow()
+        public GameView()
         {
             InitializeComponent();
         }

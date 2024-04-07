@@ -1,0 +1,50 @@
+﻿<Window x:Class="Dame.View.GameView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Dame.ViewModel"
+        xmlns:local="clr-namespace:Dame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized">
+    <Window.DataContext>
+        <vm:GameViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Height="50">
+                <!-- meniu pentru joc -->
+                <Label>Ceva in label</Label>
+            </Menu>
+
+            <StatusBar DockPanel.Dock="Right" Width="420">
+                <!-- bara de stare-->
+                <Label>Ceva in label</Label>
+            </StatusBar>
+
+            <ItemsControl ItemsSource="{Binding BoardTiles}" Margin="10,10,10,10" Width="Auto">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="8" Rows="8"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                        <Button Command="{Binding MoveCommand}" CommandParameter="{Binding}" Margin="0" Padding="0" BorderThickness="0">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <Image Source="{Binding ImagePath}" Stretch="Fill"/>
+                                        <Image Source="{Binding PieceImagePath}" Visibility="{Binding PieceVisibility}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </DockPanel>
+    </Grid>
+</Window>

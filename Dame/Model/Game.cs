@@ -8,5 +8,15 @@ namespace Dame.Model
 {
     public class Game
     {
+        public Board GameBoard { get; private set; }
+        public bool isGameOver { get; private set; }
+        public Piece.Color CurrentPlayer { get; private set; }
+
+        public Game()
+        {
+            GameBoard = new Board();
+            isGameOver = false;
+            CurrentPlayer = Piece.Color.Red;
+        }
     }
 }

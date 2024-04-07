@@ -16,7 +16,7 @@ namespace Dame.Model
         public Piece(Color color, int row, int column)
         {
             this.PieceColor = color;
-            this.isKing = true;
+            this.isKing = false;
             this.Position = (row, column);
         }
     }
